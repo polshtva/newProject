@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            background-color: cadetblue;
+        }
+
+        .root * {
+            padding: 1em;
+            display: inline-block;
+            background-color: red;
+        }
+
+        .root div {
+            background-color: greenyellow;
+        }
+
+        .root p {
+            background-color: aqua;
+        }
+
+        .root a {
+            background-color: yellow;
+        }
+
+        .root i {
+            background-color: black;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="root">
+        <div class="">
+            <p>
+                <a>
+                    <i>111</i>
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <script>
+        let els = document.querySelectorAll('*');
+        els.forEach(el => el.addEventListener('click', e => {
+            console.log(e.target.tagName, e.currentTarget.tagName);
+        }));
+        els.forEach(el => el.addEventListener('click', e => {
+            console.log(e.target.tagName, e.currentTarget.tagName);
+        }, true));
+    </script>
+</body>
+
+</html>
